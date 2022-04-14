@@ -77,7 +77,7 @@ class IBAN {
    */
   parse(iban: string) {
     if (!this.isValid(iban)) {
-      return new Error('Invalid IBAN');
+      throw new Error('Invalid IBAN');
     }
 
     return this.parser.parse(iban);
