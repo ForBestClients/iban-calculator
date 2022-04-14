@@ -7,6 +7,7 @@ type ParsedObject = {
   controlNumber: string;
   bankName: string;
   bankCode: string;
+  swift: string;
   accountNumberPrefix: string;
   accountNumber: string;
   [key: string]: any;
