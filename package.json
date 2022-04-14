@@ -1,6 +1,6 @@
 {
   "name": "iban-parser",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "iban parser",
   "keywords": [],
   "main": "lib/index.js",
