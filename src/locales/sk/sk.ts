@@ -18,7 +18,7 @@ const localeDefinition: LocaleDefinition = {
 
     if (parsedIban) {
       ibanObject = {
-        iban: iban,
+        iban,
         ibanFormatted: this.format(iban),
         country: CountryEnum[parsedIban.country],
         controlNumber: parsedIban?.controlNumber,
