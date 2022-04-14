@@ -34,7 +34,7 @@ class IBAN {
     return tempIban
       .split('')
       .map((n) => {
-        var code = n.charCodeAt(0);
+        const code = n.charCodeAt(0);
         if (code >= A && code <= Z) {
           // A = 10, B = 11, ... Z = 35
           return code - A + 10;

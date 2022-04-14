@@ -50,15 +50,16 @@ class Structure {
   _structureToRegex() {
     let ibanRegex = '';
     const structureRegex = /(?:(?<count>\d\d*)(?<isMax>!)?(?<type>a|c|e|n))+?/gi;
-    let m;
+    let m = structureRegex.exec(this.structure);
 
-    while ((m = structureRegex.exec(this.structure)) !== null) {
+    while (m !== null) {
       // This is necessary to avoid infinite loops with zero-width matches
       if (m.index === structureRegex.lastIndex) {
         structureRegex.lastIndex++;
       }
 
       ibanRegex += this._bildRegexForGroup(m);
+      m = structureRegex.exec(this.structure);
     }
 
     return new RegExp('^' + ibanRegex + '$');

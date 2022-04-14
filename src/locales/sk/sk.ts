@@ -7,10 +7,10 @@ const localeDefinition: LocaleDefinition = {
   parseRegex:
     /^(?<country>SK)(?<controlNumber>[0-9]{2})(?<bankCode>[0-9]{4})(?<accountNumberPrefix>[0-9]{6})(?<accountNumber>[0-9]{10})$/,
   formatRegex: /(SK\d{2})(\d{4})(\d{4})(\d{4})(\d{4})(\d{4})/,
-  format: function (iban: string) {
+  format(iban: string) {
     return iban.replace(this.formatRegex, '$1 $2 $3 $4 $5 $6');
   },
-  parse: function (iban: string): IbanObject {
+  parse(iban: string): IbanObject {
     const ibanRegExp = new RegExp(this.parseRegex);
 
     const parsedIban = ibanRegExp.exec(iban)?.groups;
